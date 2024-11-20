@@ -1,6 +1,6 @@
 'use client'
 import { AiOutlinePlus, AiOutlineMinus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 // import { toast } from 'react-hot-toast';
 import { client } from '../../lib/client';
 import Product from '../../component/Product';
