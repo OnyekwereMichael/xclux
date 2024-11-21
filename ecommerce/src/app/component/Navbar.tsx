@@ -18,6 +18,7 @@ const Navbar = () => {
         {name:'Shop Now', href: '/'},
         {name:'Collections', href: '/collections'},
         {name:'About', href: '/about'},
+        {name:'Contact Us', href: '/contact'},
 
 ]
 

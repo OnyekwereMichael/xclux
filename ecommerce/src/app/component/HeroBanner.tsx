@@ -98,7 +98,7 @@ const pathName = usePathname()
         </div>
       </div>
 
-      <div className="flex items-center gap-5 uppercase text-[20px] font-extralight mt-5 max-sm:gap-2 max-sm:mb-8 max-sm:text-[14px]">
+      <div className="flex items-center gap-5 uppercase text-[20px] font-extralight mt-5 max-sm:gap-2 max-sm:mb-8 max-sm:text-[14px] max-sm:px-2">
       {links.map((link, idx) => (
              <p key={idx}  className={`font-semibold whitespace-nowrap p-1 cursor-pointer text-[18px]`}>
                   {pathName === link.href ? (

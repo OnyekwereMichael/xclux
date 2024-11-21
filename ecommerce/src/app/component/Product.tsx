@@ -14,6 +14,7 @@ interface ProductData {
   categoryName: string
 }
 const Product: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
       const fetchProducts = async () => {
         const query = `*[_type == "product"] | order(_createdAt desc) {
       _id,
@@ -72,8 +73,8 @@ const Product: React.FC = () => {
             </div>
             </div>
           
-            <h3 className='text-[14px] no-underline lg:text-[18px] font-semibold capitalize text-center py-[4px] overflow-hidden whitespace-nowrap text-ellipsis'>{product.name}</h3>
-            <p className='text-black text-opacity-60 text-[13px] lg:text-[16px] font-semibold w-full max-w-[90%] text-right mb-4 capitalize overflow-hidden whitespace-nowrap text-ellipsis max-sm:'>{product.details}</p>
+            <h3 className='text-[14px] no-underline lg:text-[20px] font-semibold capitalize text-center py-[4px] overflow-hidden whitespace-nowrap text-ellipsis'>{product.name}</h3>
+            <p className='text-black text-opacity-60 text-[13px] lg:text-[18px] font-semibold w-full max-w-[90%] text-right mb-4 capitalize overflow-hidden whitespace-nowrap text-ellipsis max-sm:'>{product.details}</p>
             <p className='text-[15px] lg:text-[22px]   capitalize w-full text-center overflow-hidden whitespace-nowrap text-ellipsis font-semibold'>NGN {product.price}</p>
             </div>
           </div>

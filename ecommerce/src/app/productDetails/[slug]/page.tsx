@@ -109,7 +109,7 @@ const Productdetails = ({ params }:{params:{slug:string}}) => {
           <p className="price">NGN {productDetail.price}</p>
 
           <div className="quantity my-2 max-sm:my-[2px]">
-            <h3>Quantity:</h3>
+            <h4>Quantity:</h4>
             <p className="quantity-desc">
               <span className="minus" >
                 <AiOutlineMinus />
