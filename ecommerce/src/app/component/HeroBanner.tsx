@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { client } from '../lib/client';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Loader2 } from 'lucide-react';
 
 // Type definition for banner data
 interface BannerData {
@@ -61,7 +62,7 @@ const pathName = usePathname()
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className='flex justify-center items-center h-[100vh] text-center'><Loader2 size={40} className='animate-spin' /></div>;
   }
 
   if (isError || !banner) {

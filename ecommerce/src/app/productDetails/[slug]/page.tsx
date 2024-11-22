@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 // import { toast } from 'react-hot-toast';
 import { client } from '../../lib/client';
 import Product from '../../component/Product';
+import { Loader2 } from 'lucide-react';
+import AddtoBag from '@/app/component/AddtoBag';
 
 interface ProductData {
   _id: string;
@@ -12,6 +14,7 @@ interface ProductData {
   slug: string;
   details: string;
   images: string[];
+  price_id: string;
 }
 
 const Productdetails = ({ params }:{params:{slug:string}}) => {
@@ -29,7 +32,8 @@ const Productdetails = ({ params }:{params:{slug:string}}) => {
       price,
       "slug": slug.current,
       "details": details,
-      "images": image[].asset->url
+      "images": image[].asset->url,
+      price_id
     }`;
     const data = await client.fetch(query);
     return data || null;
@@ -53,7 +57,7 @@ const Productdetails = ({ params }:{params:{slug:string}}) => {
 
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className='flex justify-center items-center h-[100vh] text-center'><Loader2 size={40} className='animate-spin' /></div>;
   }
 
   if (isError || !productDetail) {
@@ -122,9 +126,15 @@ const Productdetails = ({ params }:{params:{slug:string}}) => {
           </div>
 
           <div className="buttons">
-            <button type="button" className="add-to-cart" >
-              Add to Cart
-            </button>
+            <AddtoBag 
+               currency='USD'
+               details={productDetail.details}
+               price={productDetail.price}
+               name={productDetail.name}
+               image={productDetail.images[0]}
+               key={productDetail._id}
+               price_id={productDetail.price_id}
+            />
             <button className="buy-now">Buy Now</button>
           </div>
         </div>

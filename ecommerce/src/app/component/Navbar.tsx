@@ -9,10 +9,12 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import MobileNav from './MobileNav';
+import { useShoppingCart } from 'use-shopping-cart';
 
 
 
 const Navbar = () => {
+  const {handleCartClick} = useShoppingCart()
     const links =
     [      
         {name:'Shop Now', href: '/'},
@@ -50,9 +52,9 @@ const pathName = usePathname()
       {links.map((link, idx) => (
              <p key={idx}  className={`font-semibold whitespace-nowrap p-1 cursor-pointer text-[18px]`}>
                   {pathName === link.href ? (
-                     <Link href={link.href} className='border-b-4 border-white text-[#C3D4E9] tranistion-all duration-300'>{link.name}</Link>
+                     <Link href={link.href} className='border-b-4 border-white text-[#fff] tranistion-all duration-300 hover:border-b-4 hover:border-white'>{link.name}</Link>
                   ): (
-                      <Link href={link.href} className='font-semibold  text-gray-600 tranistion-all duration-300 hover:text-red-900 border-none'>{link.name}</Link>
+                      <Link href={link.href} className='font-semibold  text-[#fff] tranistion-all duration-300 hover:text-red-900 border-none hover:border-b-4 hover:border-white'>{link.name}</Link>
                   )}
              </p>
       ))}
@@ -73,7 +75,7 @@ const pathName = usePathname()
       </div>
 
       <div className='flex gap-[10px] max-xl:hidden'>
-        <AiOutlineShopping className='text-white text-2xl' />
+        <AiOutlineShopping className='text-white text-2xl' onClick={() => handleCartClick()}/>
         {/* <FaShareAlt className='text-white text-2xl' /> */}
         <IoShareOutline size={24} className='text-white text-2xl'/>
       </div>

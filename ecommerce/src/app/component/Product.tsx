@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { client } from '../lib/client'
 import { AiOutlineShopping } from 'react-icons/ai'
 import Link from 'next/link';
+import { Loader2 } from 'lucide-react';
 
 interface ProductData {
   _id: string;
@@ -52,7 +53,7 @@ const Product: React.FC = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className='flex justify-center items-center h-[100vh] text-center'><Loader2 size={40} className='animate-spin' /></div>;
   }
 
   if (isError) {

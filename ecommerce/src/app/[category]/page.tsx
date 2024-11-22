@@ -70,7 +70,7 @@ return data;
           <Link href={`/productDetails/${product.slug}`} key={product._id}>
           <div key={product._id} className='relative'>
             <div>
-            <img src={product.imageUrl} alt={product.name} />
+            <img src={product.imageUrl[0]} alt={product.name} />
              <div>
               <div className=' outline-none border-0 p-[10px] flex flex-col justify-center items-center absolute lg:bottom-[134px] lg:left-[20px] lg:w-[44px] lg:h-[44px] h-[34px] w-[34px] max-sm:w-[25px] max-sm:h-[25px] bottom-[90px] left-[5%] bg-white opacity-90 rounded-[8px]'>
             <AiOutlineShopping size={14} className='text-black opacity-80 text-3xl max-sm:text-2xl no-underline  font-medium capitalize overflow-hidden whitespace-nowrap text-ellipsis absolute w-full h-full z-2' />

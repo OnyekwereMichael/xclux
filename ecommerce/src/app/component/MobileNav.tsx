@@ -32,12 +32,12 @@ const MobileNav = () => {
                   <ul className="text-white capitalize flex flex-col gap-4">
                     <li className='text-[18px] my-5'>
                       <SheetClose asChild>
-                        <a href="" className='text-[#C3D4E9]'>Our Collections</a>
+                        <a href="/collections" className='text-[#C3D4E9]'>Our Collections</a>
                       </SheetClose>
                     </li>
                     <li className='text-[18px] my-5'>
                       <SheetClose asChild>
-                        <a href="" className='text-[#C3D4E9]'>About The Brand</a>
+                        <a href="/about" className='text-[#C3D4E9]'>About The Brand</a>
                       </SheetClose>
                     </li>
                     <li className='text-[18px] my-5'>
@@ -47,7 +47,7 @@ const MobileNav = () => {
                     </li>
                     <li className='text-[18px] my-5'>
                       <SheetClose asChild>
-                        <a href="" className='text-[#C3D4E9]'>Contact Us</a>
+                        <a href="/contact" className='text-[#C3D4E9]'>Contact Us</a>
                       </SheetClose>
                     </li>
                   </ul>
